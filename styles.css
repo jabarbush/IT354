@@ -1,47 +1,49 @@
-﻿body {
+body {
    background-color: #fdeec6;
-   margin: 20px;
+   padding-left: 200px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
   background-color: #192d47;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+.sidenav a {
+  padding: 6px 8px 0px 16px;
   text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
 }
 
-li a:hover {
-  background-color: #47734c;
+.sidenav a:hover {
+  color: #f1f1f1;
 }
 
-.active {
-  background-color: #215560;
+.main {
+  margin-left: 10px;
+  font-size: 28px;
+  padding: 10px 10px;
 }
 
-div {
-  margin: 20px;
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 .heading{
-    font-family: 'Roboto', sans-serif;
-    
+    font-family: 'Arial', sans-serif;   
 }
 
 .subheading{
-    font-family: 'Mate';
+    font-family: 'Arial';
     font-size: 25px;
     font-style: italic;
     font-variant: normal;
@@ -50,5 +52,13 @@ div {
 }
 
 .text{
-    font-family: 'Hind Madurai', sans-serif;
+    font-family: 'Calibri', serif;
+}
+
+.myclass{
+    font-style: italic;
+    font-variant: normal;
+    font-weight: 50;
+    float:right;
+    font-size: 25px;
 }
