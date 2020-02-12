@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <meta charset="utf-8" />
+    <title>Parameters and Arguments</title>
+</head>
+<body>
+
+    <div class = "heading"><h1>Jake Barbush</h1></div>
+    <div class = "myclass"><h2>IT 354</h2></div>
+    <hr>
+
+
+<div class ="sidenav">
+  <a href="./index.html">Home</a>
+  <a href="./values_types.html">Values and Types</a>
+  <a href="./unary_operators.html">Unary Operators</a>
+  <a href="./hoisting.html">Hoisting</a>
+  <a href="./functions.html">Functions</a>
+  <a class="active" href="./parameters_arguments.html">Parameters and Arguments</a>
+   <a href="./ECMAscript.html">ECMAscript</a>
+ 
+</div>
+<div class = "subheading"><h3>Tutorial on Parameters and Arguments of Javascript</h3></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A4bhct0-BQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3>Optional Arguments:</h3>
+<p> These are arguments that you do not need because there is already a default value. However, if given a value, that will replace the default value. This is good for reducing errors!
+<br/><br/><code>function add(x, y = 1) {return x + y;}</code>
+</p>
+<h3>Rest Parameter:</h3>
+<p>A rest parameter allows for any number of arguments! This is great if the number of arguments you need varies.
+<br/><br/><code>function add(...arguments){ }</code>
+</p>
+<h3>Scope:</h3><p>
+</p>There is global scope and local scope. Global scope allows the function to see everything within a class. Essentially, you can see out, but you can't see in.
+<h3>Nested Functions:</h3>
+<p> A nested function is where a function is within another function.
+<br/><br/><code>let varible = function add(x, y){return a+b}</code>
+</p>
+</body>
+</html>
