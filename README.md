@@ -7,3 +7,6 @@ It is a website that holds JavaScript tutorials and articles about web design.
 * HTML - Content
 * CSS - Styling of the pages, animation 
 * JavaScript - Responsiveness and additional functions 
+
+# How to View This Website
+Download this repository and unzip the file into a folder. Open the index.html file into a browser and you're good to go!
