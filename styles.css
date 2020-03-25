@@ -1,0 +1,615 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+	font-family: 'Poppins', sans-serif;
+	background: #fafafa;
+}
+
+.search-btn {
+	display: none;
+}
+
+.topnav {
+	height: 60px;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	border-bottom: 1px solid #e07768;
+}
+
+p {
+	display: inline;
+}
+
+.down-caret {
+	font-size: 14px;
+	float: right;
+	padding-right: 30px;
+}
+
+	.down-caret:hover {
+		transition: .2s;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+.intro {
+	background-color: #f7f7f7;
+	margin-left: 28px;
+	margin-right: 28px;
+	padding-bottom: 10px;
+}
+
+main {
+	margin-left: 200px;
+	margin-top: 100px;
+	padding-left: 0px;
+	padding-top: 10px;
+	margin-right: 100px;
+	padding-bottom: 30px;
+}
+
+.form {
+	float: right;
+	padding: 12px;
+	display: none;
+}
+
+.fa-bars {
+	float: left;
+	color: gray;
+}
+
+	.fa-bars:hover {
+		opacity: 0.7;
+}
+.fa-code{
+	color:white;
+	font-size: 55px;
+	margin-top:30px;
+	font-weight: normal;
+}
+.fa-font{
+	color:white;
+	font-size: 55px;
+	margin-top:30px;
+}
+.fa-smile-o{
+	color:white;
+	font-size: 55px;
+	margin-top:30px;
+}
+
+.icon1 {
+	font-size: 35px;
+	float: left;
+	position: relative;
+	top: 10px;
+	margin-left: 20px;
+	margin-top: 15px;
+	display: none;
+}
+
+.fa {
+	padding: 10px;
+	font-size: 10px;
+	width: 35px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	float: right;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+	.fa:hover {
+		opacity: 0.7;
+	}
+
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+	margin-top: 10px;
+}
+
+.fa-linkedin {
+	background: #007bb5;
+	color: white;
+	margin-top: 10px;
+}
+
+.fa-youtube {
+	background: #bb0000;
+	color: white;
+	margin-top: 10px;
+}
+
+.fa-github {
+	background: #000000;
+	color: white;
+	margin-top: 10px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #797979;
+	display: block;
+	border: none;
+	background: none;
+	width: 100%;
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+}
+
+
+	/* On mouse-over */
+	.sidenav a:hover, .dropdown-btn:hover {
+		color: #717171;
+		text-decoration: underline;
+		background-color: #f7f7f7;
+		border-right: 4px solid #e07768;
+	}
+
+/* Add an active class to the active dropdown button */
+.active {
+	background-color: white;
+	color: #797979;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container1 {
+	display: none;
+	background-color: white;
+	padding-left: 25px;
+}
+
+.dropdown-container2 {
+	display: none;
+	background-color: white;
+	padding-left: 20px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+	float: right;
+	padding-right: 10px;
+}
+
+.logo {
+	margin-top: 5px;
+	margin-left: 175px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+	margin: 0 -5px;
+}
+
+	/* Clear floats after the columns */
+	.row:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+/* Style the counter cards */
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 16px;
+	text-align: center;
+	background-color: #f1f1f1;
+}
+
+.container {
+	margin:0%;
+	padding: 9.5%;
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+	.container .card {
+		position: relative;
+		border-radius: 10px;
+		width: 31%;
+	}
+		.container .card .icon {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #f00;
+			transition: 0.7s;
+			z-index: 1;
+		}
+
+		.container .card:nth-child(1) .icon {
+			background: #e07768;
+		}
+
+		.container .card:nth-child(2) .icon {
+			background: #6eadd4;
+		}
+
+		.container .card:nth-child(3) .icon {
+			background: #4aada9;
+		}
+
+		.container .card .icon .fa {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 80px;
+			transition: 0.7s;
+			color: #fff;
+		}
+
+i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 80px;
+	transition: 0.7s;
+	color: #fff;
+}
+
+.container .card .face {
+	width: 100%;
+	height: 120px;
+	transition: 0.5s;
+	font-size: 12px;
+}
+
+	.container .card .face.face1 {
+		position: relative;
+		background: #333;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+		transform: translateY(60px);
+	}
+
+.container .card:hover .face.face1 {
+	background: #ff0057;
+	transform: translateY(0px);
+}
+
+.container .card .face.face1 .content {
+	opacity: 1;
+	transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content {
+	opacity: 1;
+}
+
+.container .card .face.face1 .content i {
+	max-width: 100px;
+}
+
+.container .card .face.face2 {
+	position: relative;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+	transform: translateY(-60px);
+}
+
+.container .card:hover .face.face2 {
+	transform: translateY(0);
+}
+
+.container .card .face.face2 .content p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #414141;
+}
+
+.container .card .face.face2 .content h3 {
+	margin: 0 0 10px 0;
+	padding: 0;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	color: #414141;
+}
+
+.container a {
+	text-decoration: none;
+	color: #414141;
+	transition: 0.5s;
+}
+
+.card:nth-child(1) h3 a:hover {
+	color: #e07768;
+}
+
+.card:nth-child(2) h3 a:hover {
+	color: #6eadd4;
+}
+
+.card:nth-child(3) h3 a:hover {
+	color: #4aada9;
+}
+/* Responsive columns */
+@media screen and (max-width: 1000px) {
+	.container .card .icon .fa {
+		left: 20%;
+	}
+}
+
+/* Responsive columns */
+@media screen and (max-width: 825px) {
+	.container .card {
+		float: left;
+		display: block;
+	}
+}
+
+
+p {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.1em;
+	font-weight: 300;
+	line-height: 1.7em;
+	color: #999;
+}
+
+a, a:hover, a:focus {
+	color: black;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+.navbar{
+	padding: 10px 10px;
+	background: #fff;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 40px;
+	border-bottom: 2px solid #e07768;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+	box-shadow: none;
+	outline: none !important;
+	border: none;
+	margin-left:40px;
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px dashed #ddd;
+	margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+	perspective: 1500px;
+}
+
+
+#sidebar {
+	min-width: 200px;
+	max-width: 200px;
+	background: #fafafa;
+	color: #fff;
+	transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+	transform-origin: bottom left;
+	border-right:2px solid #e07768;
+}
+
+	#sidebar.active {
+		margin-left: -250px;
+		transform: rotateY(100deg);
+	}
+
+	#sidebar .sidebar-header {
+		padding: 20px;
+		background: #fafafa;
+		color:black;
+	}
+
+	#sidebar ul.components {
+		padding: 20px 0;
+		border-bottom: 1px solid #e07768;
+	}
+
+	#sidebar ul p {
+		color: #fff;
+		padding: 10px;
+	}
+
+	#sidebar ul li a {
+		padding: 10px;
+		font-size: 1.1em;
+		display: block;
+		opacity: 1.0;
+
+	}
+
+		#sidebar ul li a:hover {
+			color: #e07768;
+			background: #fff;
+		}
+
+	#sidebar ul li.active > a, a[aria-expanded="true"] {
+		color: black;
+		background: #e07768;
+		opacity: 1.0;
+	}
+
+
+a[data-toggle="collapse"] {
+	position: relative;
+}
+
+.dropdown-toggle::after {
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+}
+
+ul ul a {
+	font-size: 0.9em !important;
+	padding-left: 30px !important;
+	background: #e07768;
+	opacity: 1.0;
+}
+
+ul.CTAs {
+	padding: 20px;
+}
+
+	ul.CTAs a {
+		text-align: center;
+		font-size: 0.9em !important;
+		display: block;
+		border-radius: 5px;
+		margin-bottom: 5px;
+	}
+
+a.download {
+	background: #fff;
+	color: #e07768;
+}
+
+a.article, a.article:hover {
+	background: #e07768 !important;
+	color: #fff !important;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+.content-main {
+	margin-left:10%;
+  margin-right:10%;
+}
+#content {
+	width: 100%;
+	padding: 0px;
+	min-height: 100vh;
+	transition: all 0.6s;
+	padding-bottom: 100px;
+}
+
+#sidebarCollapse {
+	width: 40px;
+	height: 40px;
+	background: #f5f5f5;
+	cursor: pointer;
+}
+
+	#sidebarCollapse span {
+		width: 80%;
+		height: 2px;
+		margin: 0 auto;
+		display: block;
+		background: #555;
+		transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+		transition-delay: 0.2s;
+	}
+
+		#sidebarCollapse span:first-of-type {
+			transform: rotate(45deg) translate(2px, 2px);
+		}
+
+		#sidebarCollapse span:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		#sidebarCollapse span:last-of-type {
+			transform: rotate(-45deg) translate(1px, -1px);
+		}
+
+
+	#sidebarCollapse.active span {
+		transform: none;
+		opacity: 1;
+		margin: 5px auto;
+	}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 700px) {
+	#content{
+		margin-left:10%;
+	}
+	.container{
+		flex-direction: column;
+	}
+	.container .card{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	#sidebar {
+		margin-left: -250px;
+		transform: rotateY(90deg);
+	}
+	
+		#sidebar.active {
+			margin-left: 0;
+			transform: none;
+		}
+
+	#sidebarCollapse span:first-of-type,
+	#sidebarCollapse span:nth-of-type(2),
+	#sidebarCollapse span:last-of-type {
+		transform: none;
+		opacity: 1;
+		margin: 5px auto;
+	}
+
+	#sidebarCollapse.active span {
+		margin: 0 auto;
+	}
+
+		#sidebarCollapse.active span:first-of-type {
+			transform: rotate(45deg) translate(2px, 2px);
+		}
+
+		#sidebarCollapse.active span:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		#sidebarCollapse.active span:last-of-type {
+			transform: rotate(-45deg) translate(1px, -1px);
+		}
+	
+}
