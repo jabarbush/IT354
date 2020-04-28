@@ -5,6 +5,10 @@ body {
 	background: #fafafa;
 }
 
+.list-unstyled{
+	
+}
+
 .search-btn {
 	display: none;
 }
@@ -77,10 +81,11 @@ main {
 	font-size: 55px;
 	margin-top:30px;
 }
-.fa-smile-o{
+.fa-paper-plane{
 	color:white;
 	font-size: 55px;
 	margin-top:30px;
+	font-weight: normal;
 }
 
 .icon1 {
@@ -569,6 +574,8 @@ a.article, a.article:hover {
 .article-card {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	transition: 0.3s;
+	
+	padding:0%;
 	width: 90%;
 }
 h4:hover{
@@ -576,7 +583,8 @@ h4:hover{
 }
 
 .article-card:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.1);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 
 .article-container {
