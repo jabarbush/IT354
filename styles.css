@@ -4,11 +4,33 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background: #fafafa;
 }
+.source {
+	color: black;
+}
+.source a:hover{
+	color:blue;
+	text-decoration:underline;
+}
+/*-----------------------------
+	Table
+------------------------------*/
+table {
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+}
 
+th, td {
+	text-align: left;
+	padding: 16px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
 /*------------------------------
   Breadcrumbs
 -------------------------------*/
-/* Style the list */
 ul.breadcrumb {
 	padding: 10px;
   list-style: none;
@@ -33,7 +55,6 @@ ul.breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
 }
-
 
 .search-btn {
 	display: none;
@@ -195,7 +216,7 @@ main {
 	color: #797979;
 }
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+/* Dropdown container (hidden by default). */
 .dropdown-container1 {
 	display: none;
 	background-color: white;

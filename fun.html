@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
@@ -79,68 +81,112 @@
                 </div>
             </nav>
             <section class="content-main">
-                <h2>Fun</h2>
-                <p>learning is fun. come back soon for more.</p>    
+                <h2>Fun</h2> <br /><br />
+                <h3>Number of COVID-19 Cases and Deaths by Country </h3>
+                <h3>(Click on column title to sort)</h3>
+                <p style="color:black;">Last update: </p>
+                <p id="date" style="color:black;"></p><br/>
+                <p class="source">Data source: <a href="https://rapidapi.com/astsiatsko/api/coronavirus-monitor-v2">RapidAPI Coronavirus Monitor v2</a></p>
+                <table id="table_id" border=1>
+                </table>
             </section>
-            <section class="cards">
-                <div class="container">
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class="fa fa-code" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>
-                                    <a href="./all_lessons.html" target="_blank">JavaScript</a>
-                                </h3>
-                                <p>Learn the basics of JavaScript with quick lessons.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class="fa fa-font" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>
-                                    <a href="./all_articles.html" target="_blank">Articles</a>
-                                </h3>
-                                <p>Read about topics I've researched.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="face face1">
-                            <div class="content">
-                                <div class="icon">
-                                    <i class="fa fa-smile-o" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="face face2">
-                            <div class="content">
-                                <h3>
-                                    <a href="./fun.html" target="_blank">Fun</a>
-                                </h3>
-                                <p>Have fun with web tools I've been exploring!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      
+            <script>
+                //Call Rapid API and pass response to printJSON()
+                var data = null;
+                var xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+                xhr.addEventListener("readystatechange", function () {
+	                if (this.readyState === this.DONE) {
+                        //console.log(this.responseText);
+                        printJSON(this.responseText);
+	                }
+                });
+                xhr.open("GET", "https://coronavirus-monitor-v2.p.rapidapi.com/coronavirus/cases_by_country.php");
+                xhr.setRequestHeader("x-rapidapi-host", "coronavirus-monitor-v2.p.rapidapi.com");
+                xhr.setRequestHeader("x-rapidapi-key", "1b7ce91bfdmsh12f776c8e15bd11p1535c4jsna718c1188568");
+                xhr.send(data);
+                //create table for data
+                let table = '<thead><tr><th onClick="sortTable(0);">Country</th><th onClick="sortTable(1);">Cases</th><th onClick="sortTable(2);">Deaths</th></tr></thead><tbody>';
+                
+                //Parse JSON, run it through a loop to get data & put it in appropriate row/column
+                function printJSON(response) {
+                    var obj = JSON.parse(response);
+                    document.getElementById("date").innerHTML = obj.statistic_taken_at;
+                    for (i = 1; i < 215; i++) {
+                        table += '<tr><td>'+ obj.countries_stat[i].country_name +'</td>';
+                        table += '<td>' + removeComma(obj.countries_stat[i].cases) + '</td>';
+                        table += '<td>' + removeComma(obj.countries_stat[i].deaths) + '</td></tr>';
+                    }
+                    table += '</tbody>';
+                    $('#table_id').empty().html(table);
+                }
+                function removeComma(nStr) {
+                    var a = nStr;
+                    a = a.replace(/\,/g, '');
+                    a = parseFloat(a);
+                    return a;
+                }
+                function addComma(nStr){
+                    nStr += '';
+                    var x = nStr.split('.');
+                    var x1 = x[0];
+                    var x2 = x.length > 1 ? '.' + x[1] : '';
+                    var rgx = /(\d+)(\d{3})/;
+                    while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                    }
+                    return x1 + x2;
+                }
+                //This function sorts the columns in the table asc / des on click
+                //source: https://webdesires.co.uk/knowledge-base/sort-table-by-column-using-javascript-text-sort-number-sort/
+                var asc = 0;
+                function sort_table(table, col){
+	                $('.sortorder').remove();
+	                if (asc == 2) {asc = -1;} else {asc = 2;}
+	                var rows = table.tBodies[0].rows;
+	                var rlen = rows.length-1;
+	                var arr = new Array();
+	                var i, j, cells, clen;
+	                // fill the array with values from the table
+	                for(i = 0; i < rlen; i++){
+		                cells = rows[i].cells;
+		                clen = cells.length;
+		                arr[i] = new Array();
+		                for(j = 0; j < clen; j++) { arr[i][j] = cells[j].innerHTML; }
+	                }
+	                // sort the array by the specified column number (col) and order (asc)
+	                arr.sort(function(a, b){
+		                var retval=0;
+		                var col1 = a[col].toLowerCase().replace(',', '').replace('$', '').replace(' usd', '')
+		                var col2 = b[col].toLowerCase().replace(',', '').replace('$', '').replace(' usd', '')
+		                var fA=parseFloat(col1);
+		                var fB=parseFloat(col2);
+		                if(col1 != col2){
+			                if((fA==col1) && (fB==col2) ){ retval=( fA > fB ) ? asc : -1*asc; } //numerical
+			                else { retval=(col1 > col2) ? asc : -1*asc;}
+		                }
+		                return retval;      
+	                });
+	                for(var rowidx=0;rowidx<rlen;rowidx++){
+		                for(var colidx=0;colidx<arr[rowidx].length;colidx++){ table.tBodies[0].rows[rowidx].cells[colidx].innerHTML=arr[rowidx][colidx]; }
+                    }
+                    hdr = table.rows[0].cells[col];
+	                if (asc == -1) {
+		                $(hdr).html($(hdr).html() + '<span class="sortorder">▲</span>');
+		                } else {
+		                $(hdr).html($(hdr).html() + '<span class="sortorder">▼</span>');
+	                }
+                }
+                function sortTable(n){
+	                sort_table(document.getElementById("table_id"), n);
+                }
+            </script>
+
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
