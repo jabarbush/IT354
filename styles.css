@@ -4,6 +4,13 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background: #fafafa;
 }
+#emailBtn {
+	background-color: #4aada9;
+	border-color: #4aada9;
+}
+#emailBtn:hover{
+	opacity: 0.85;
+}
 .source {
 	color: black;
 }
@@ -81,11 +88,11 @@ p {
 	padding-right: 30px;
 }
 
-	.down-caret:hover {
-		transition: .2s;
-		font-weight: bold;
-		font-size: 18px;
-	}
+.down-caret:hover {
+	transition: .2s;
+	font-weight: bold;
+	font-size: 18px;
+}
 
 .intro {
 	background-color: #f7f7f7;
@@ -202,13 +209,13 @@ main {
 }
 
 
-	/* On mouse-over */
-	.sidenav a:hover, .dropdown-btn:hover {
-		color: #717171;
-		text-decoration: underline;
-		background-color: #f7f7f7;
-		border-right: 4px solid #e07768;
-	}
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+	color: #717171;
+	text-decoration: underline;
+	background-color: #f7f7f7;
+	border-right: 4px solid #e07768;
+}
 
 /* Add an active class to the active dropdown button */
 .active {
@@ -249,12 +256,12 @@ main {
 	margin: 0 -5px;
 }
 
-	/* Clear floats after the columns */
-	.row:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 
 /* Style the counter cards */
 .card {
@@ -273,43 +280,43 @@ main {
 	justify-content: space-between;
 }
 
-	.container .card {
-		position: relative;
-		border-radius: 10px;
-		width: 31%;
-	}
-		.container .card .icon {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: #f00;
-			transition: 0.7s;
-			z-index: 1;
-		}
+.container .card {
+	position: relative;
+	border-radius: 10px;
+	width: 31%;
+}
+.container .card .icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #f00;
+	transition: 0.7s;
+	z-index: 1;
+}
 
-		.container .card:nth-child(1) .icon {
-			background: #e07768;
-		}
+.container .card:nth-child(1) .icon {
+	background: #e07768;
+}
 
-		.container .card:nth-child(2) .icon {
-			background: #6eadd4;
-		}
+.container .card:nth-child(2) .icon {
+	background: #6eadd4;
+}
 
-		.container .card:nth-child(3) .icon {
-			background: #4aada9;
-		}
+.container .card:nth-child(3) .icon {
+	background: #4aada9;
+}
 
-		.container .card .icon .fa {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-size: 80px;
-			transition: 0.7s;
-			color: #fff;
-		}
+.container .card .icon .fa {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 80px;
+	transition: 0.7s;
+	color: #fff;
+}
 
 i {
 	position: absolute;
@@ -481,45 +488,45 @@ a, a:hover, a:focus {
 	border-right:2px solid #e07768;
 }
 
-	#sidebar.active {
-		margin-left: -250px;
-		transform: rotateY(100deg);
-	}
+#sidebar.active {
+	margin-left: -250px;
+	transform: rotateY(100deg);
+}
 
-	#sidebar .sidebar-header {
-		padding: 20px;
-		background: #fafafa;
-		color:black;
-	}
+#sidebar .sidebar-header {
+	padding: 20px;
+	background: #fafafa;
+	color:black;
+}
 
-	#sidebar ul.components {
-		padding: 20px 0;
-		border-bottom: 1px solid #e07768;
-	}
+#sidebar ul.components {
+	padding: 20px 0;
+	border-bottom: 1px solid #e07768;
+}
 
-	#sidebar ul p {
-		color: #fff;
-		padding: 10px;
-	}
+#sidebar ul p {
+	color: #fff;
+	padding: 10px;
+}
 
-	#sidebar ul li a {
-		padding: 10px;
-		font-size: 1.1em;
-		display: block;
-		opacity: 1.0;
+#sidebar ul li a {
+	padding: 10px;
+	font-size: 1.1em;
+	display: block;
+	opacity: 1.0;
 
-	}
+}
 
-		#sidebar ul li a:hover {
-			color: #e07768;
-			background: #fff;
-		}
+#sidebar ul li a:hover {
+	color: #e07768;
+	background: #fff;
+}
 
-	#sidebar ul li.active > a, a[aria-expanded="true"] {
-		color: black;
-		background: #e07768;
-		opacity: 1.0;
-	}
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+	color: black;
+	background: #e07768;
+	opacity: 1.0;
+}
 
 
 a[data-toggle="collapse"] {
@@ -545,13 +552,13 @@ ul.CTAs {
 	padding: 20px;
 }
 
-	ul.CTAs a {
-		text-align: center;
-		font-size: 0.9em !important;
-		display: block;
-		border-radius: 5px;
-		margin-bottom: 5px;
-	}
+ul.CTAs a {
+	text-align: center;
+	font-size: 0.9em !important;
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
 
 a.download {
 	background: #fff;
@@ -587,34 +594,34 @@ a.article, a.article:hover {
 	cursor: pointer;
 }
 
-	#sidebarCollapse span {
-		width: 80%;
-		height: 2px;
-		margin: 0 auto;
-		display: block;
-		background: #555;
-		transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-		transition-delay: 0.2s;
-	}
+#sidebarCollapse span {
+	width: 80%;
+	height: 2px;
+	margin: 0 auto;
+	display: block;
+	background: #555;
+	transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+	transition-delay: 0.2s;
+}
 
-		#sidebarCollapse span:first-of-type {
-			transform: rotate(45deg) translate(2px, 2px);
-		}
+#sidebarCollapse span:first-of-type {
+	transform: rotate(45deg) translate(2px, 2px);
+}
 
-		#sidebarCollapse span:nth-of-type(2) {
-			opacity: 0;
-		}
+#sidebarCollapse span:nth-of-type(2) {
+	opacity: 0;
+}
 
-		#sidebarCollapse span:last-of-type {
-			transform: rotate(-45deg) translate(1px, -1px);
-		}
+#sidebarCollapse span:last-of-type {
+	transform: rotate(-45deg) translate(1px, -1px);
+}
 
 
-	#sidebarCollapse.active span {
-		transform: none;
-		opacity: 1;
-		margin: 5px auto;
-	}
+#sidebarCollapse.active span {
+	transform: none;
+	opacity: 1;
+	margin: 5px auto;
+}
 /*----------------------------------------------------
 	article cards
 -----------------------------------------------------*/
@@ -702,16 +709,16 @@ h4:hover{
 		margin: 0 auto;
 	}
 
-		#sidebarCollapse.active span:first-of-type {
-			transform: rotate(45deg) translate(2px, 2px);
-		}
+	#sidebarCollapse.active span:first-of-type {
+		transform: rotate(45deg) translate(2px, 2px);
+	}
 
-		#sidebarCollapse.active span:nth-of-type(2) {
-			opacity: 0;
-		}
+	#sidebarCollapse.active span:nth-of-type(2) {
+		opacity: 0;
+	}
 
-		#sidebarCollapse.active span:last-of-type {
-			transform: rotate(-45deg) translate(1px, -1px);
-		}
+	#sidebarCollapse.active span:last-of-type {
+		transform: rotate(-45deg) translate(1px, -1px);
+	}
 	
 }

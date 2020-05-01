@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kwes.io/js/kwes.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
@@ -20,7 +21,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li >
+                <li>
                     <a href="./index.html"><i class="fas fa-home" style="font-size:20px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
                 </li>
                 <li>
@@ -80,8 +81,73 @@
             </nav>
             <section class="content-main">
                 <h2>Contact Me</h2>
-                <p>If you have any questions, suggestions, or comments, don't hesitate to send me an email!</p><br/><br/>
-                <p>Email: jabarbush@gmail.com</p>
+                <p>If you have any questions, suggestions, or comments, don't hesitate to send me an email!</p><br /><br />
+
+                <!--Section: Contact v.2
+                source: https://mdbootstrap.com/docs/jquery/forms/contact/ -->
+                <section class="mb-4">
+                    <div class="row">
+                        <div class="col-md-9 mb-md-0 mb-5">
+                            <div class="kwes-form">
+                                <form id="contact-form" name="contact-form" action="https://kwes.io/api/foreign/forms/LKxmDhd7wPPdZmXRa43y" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="name" name="name" class="form-control">
+                                                <label for="name" class="">Your name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="email" name="email" class="form-control">
+                                                <label for="email" class="">Your email</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form mb-0">
+                                                <input type="text" id="subject" name="subject" class="form-control">
+                                                <label for="subject" class="">Subject</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="md-form">
+                                                <textarea type="text" id="message" name="message" rows="6" class="form-control md-textarea"></textarea>
+                                                <label for="message">Your message</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="text-center text-md-left">
+                                <a id="emailBtn" class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                            </div>
+                            <div class="status"></div>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-md-3 text-center">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <i class="fas fa-map-marker-alt fa-2x"></i><br />
+                                    <p>Bloomington, IL 61701, USA</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope mt-4 fa-2x"></i><br />
+                                    <p>jabarbush@gmail.com</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+
+                </section>
+                <!--Section: Contact v.2-->
             </section>
         </div>
     </div>
@@ -98,6 +164,9 @@
             });
         });
     </script>
+
+    <script src="https://kwes.io/js/kwes.js"></script>
+
 </body>
 
 </html>
