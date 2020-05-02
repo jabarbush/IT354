@@ -76,6 +76,22 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -83,7 +99,13 @@
                     <li>Unary Operators</li>
                 </ul>
                 <h2>Unary Operators</h2>
+                
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ed1vJhZFZeE" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=JavaScript%20Tutorial:%20Unary%20OPerators%20https://www.jacobbarbush.com/tutorials/unary_operators.html"
+                   data-size="large">
+                    Tweet
+                </a>
                 <p>
                     <h4>Unary Operators:</h4>
                     <strong>Increments/Decrements</strong> - i++ , i--<br />

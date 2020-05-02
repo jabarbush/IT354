@@ -77,6 +77,22 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -85,6 +101,12 @@
                 </ul>
                 <h2>Prototypal Inheritance and 'This'</h2>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/LOSqiUpogA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=JavaScript%20Tutorial:%20Prototypal%20Inheritance%20https://www.jacobbarbush.com/tutorials/prototypal_inheritance.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                
                 <h3>Prototypal Inheritance:</h3>
                 <p>
                     Prototype is a secret property that objects have. If you try to access it, you will find it is null. But if you assign it to another object, its attributes are inherited. Here's the syntax:

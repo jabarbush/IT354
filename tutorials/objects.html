@@ -76,6 +76,22 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -84,6 +100,11 @@
                 </ul>
                 <h2>Objects</h2>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/dW3Su76VbdQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=JavaScript%20Tutorial:%20Objects%20https://www.jacobbarbush.com/tutorials/objects.html"
+                   data-size="large">
+                    Tweet
+                </a>
                 <h3>What is an object:</h3>
                 <p>
                     An object is a container that can hold properties and functions. Here is a way to declare one:
@@ -103,7 +124,7 @@
                 <p>Two more ways to create and poppulate objects are with constructors and classes! Much like Java, you can make a class and its name becomes and object. Same thing with constructors. Here is an example:</p>
                 <br /><code>class food{ function bread(rye){ this.rye=rye}}</code>
             </section>
-            
+
         </div>
     </div>
 

@@ -77,6 +77,24 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -85,6 +103,11 @@
                 </ul>
                 <h2>Functions</h2>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/XW3z7vBqIN8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=JavaScript%20Tutorial:%20Functions%20https://www.jacobbarbush.com/tutorials/functions.html"
+                   data-size="large">
+                    Tweet
+                </a>
                 <h3>Named Functions:</h3>
                 <p>
                     Named functions are just functions with names! You can use anonymous functions, but named functions allow for you to trace back errors easily.
@@ -101,7 +124,7 @@
                     <br /><br /><code>const add = (a, b) => a + b;</code>
                 </p>
             </section>
-            
+
         </div>
     </div>
 
