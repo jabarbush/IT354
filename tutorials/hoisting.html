@@ -77,6 +77,22 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -85,6 +101,12 @@
                 </ul>
                 <h2>Hoisting</h2>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/9hxJQx0eCUY" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=JavaScript%20Tutorial:%20Hoisting%20https://www.jacobbarbush.com/tutorials/hoisting.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                
                 <p>
                     <h4>Hoisting:</h4>
                     Hoisting is a mechanism in Javascript that lets variable and named function declarations be brought to
@@ -92,7 +114,7 @@
                     <br /> data values with them. The video above demonstrates an example of this.
                 </p>
             </section>
-            
+
         </div>
     </div>
 

@@ -77,6 +77,22 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -85,6 +101,12 @@
                 </ul>
                 <h2>Parameters and Arguments</h2>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/A4bhct0-BQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=JavaScript%20Tutorial:%20Parameters%20and%20Arguments%20https://www.jacobbarbush.com/tutorials/parameters_arguments.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                
                 <h3>Optional Arguments:</h3>
                 <p>
                     These are arguments that you do not need because there is already a default value. However, if given a value, that will replace the default value. This is good for reducing errors!
@@ -104,7 +126,7 @@
                     <code>let varible = function add(x, y){return a+b}</code>
                 </p>
             </section>
-            
+
         </div>
     </div>
 
