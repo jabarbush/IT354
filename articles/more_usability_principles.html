@@ -77,6 +77,24 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -84,7 +102,14 @@
                     <li>More Usability Principles</li>
                 </ul>
                 <h2>More Usability Principles</h2>
-                <p>Reference: <a href="https://www.crazyegg.com/blog/principles-website-usability/"> Website Usability Principles</a></p><br /><br />
+                <p>Reference: <a href="https://www.crazyegg.com/blog/principles-website-usability/"> Website Usability Principles</a></p>
+
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=more%20usability%20priciples%20https://www.jacobbarbush.com/articles/more_usability_principles.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                <br /><br />
                 <img src="../images/moreprinciplespic.png" height="300" width="500">
                 <br /><br />
                 <h3>1. Accessibility and Availability</h3>

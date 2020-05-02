@@ -77,13 +77,37 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="./all_articles.html">All Articles</a></li>
                     <li>Node.JS and V8</li>
                 </ul>
-                <h2>Node and V8</h2><br /><br />
+                <h2>Node and V8</h2>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=Node%20and%20V8%20https://www.jacobbarbush.com/articles/node_v8.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                <br /><br />
                 <img src="../images/v8.png" height="200" width="250"><br /><br />
                 <h3>What is V8?</h3>
                 <p>

@@ -77,6 +77,24 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -85,6 +103,12 @@
                 </ul>
                 <h2>Usability Mistakes</h2>
                 <p>Reference: <a href="https://www.smashingmagazine.com/2009/02/9-common-usability-blunders/"> Common Usability Blunders</a></p>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=usability%20mistakes%20https://www.jacobbarbush.com/articles/usability_mistakes.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                
                 <br /><br />
                 <img src="../images/lingscars.png" height="300" width="500">
                 <br /><br /><h3>Pagination Used for the Wrong Purpose</h3>
