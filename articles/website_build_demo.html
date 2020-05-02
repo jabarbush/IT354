@@ -76,6 +76,24 @@
                     </div>
                 </div>
             </nav>
+            <script>
+                window.twttr = (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                    if (d.getElementById(id)) return t;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "https://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+
+                    t._e = [];
+                    t.ready = function (f) {
+                        t._e.push(f);
+                    };
+
+                    return t;
+                }(document, "script", "twitter-wjs"));
+            </script>
             <section class="content-main">
                 <ul class="breadcrumb">
                     <li><a href="../index.html">Home</a></li>
@@ -83,7 +101,15 @@
                     <li>Website Build Demo</li>
                 </ul>
                 <h2>Website Build Demo</h2>
-                <p>This page describes my experience watching and coding along with Edwin in this video:</p> <br /><br />
+
+                
+                <p>This page describes my experience watching and coding along with Edwin in this video: <a href="https://www.youtube.com/watch?time_continue=1&v=ZeDP-rzOnAA&feature=emb_logo">Build a responsive website</a></p>
+                <a class="twitter-share-button"
+                   href="https://twitter.com/intent/tweet?text=Website%20Build%20Demo%20https://www.jacobbarbush.com/articles/website_build_demo.html"
+                   data-size="large">
+                    Tweet
+                </a>
+                <br /><br />
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZeDP-rzOnAA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <br />
                 <p>
                     In this video, Edwin created a simple, responsive landing page with just HTML and CSS. As I followed along, we make the files and adding a few elements. He started off just making a simple navigation bar and adding semantic elements around the links. I was surprised at how fast he moved, but that is probably because he had a plan of what to type. From the start, he used some css elements that I was not familiar with, like justify-content and flex. His design was simple and looked professional. <br /><br />
