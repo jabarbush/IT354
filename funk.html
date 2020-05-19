@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kwes.io/js/kwes.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Jacob Barbush</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="./index.html"><i class="fas fa-home" style="font-size:20px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+                </li>
+                <li>
+                    <a href="./tutorials/all_lessons.html"> <i class="fas fa-code" style="font-size:20px;color:black;margin-top:0px;font-weight: lighter;"></i>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript</a>
+                </li>
+
+                <li>
+                    <a href="./articles/all_articles.html"><i class="fas fa-font" style="font-size:20px;color:black;margin-top:0px;font-weight: lighter;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Articles</a>
+                </li>
+                <li>
+                    <a href="./fun.html"><i class="fas fa-paper-plane" style="font-size:20px;color:black;margin-top:0px;font-weight: lighter;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fun</a>
+                </li>
+                <li class="active">
+                    <a href="./contact.html"><i class="fas fa-envelope" style="font-size:20px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://www.linkedin.com/in/jacobbarbush" class="download">For Hire</a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com/JABarbush" class="article">Follow me on Twitter</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="https://www.twitter.com/jabarbush">Twitter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/jacobbarbush">LinkedIn</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.github.com/jabarbush">GitHub</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="content-main">
+                <h2>Is This Band Funk?</h2> <br/><br/>
+
+                <form action="">
+                    <input type="text" id="BandName" name="BandName"><br><br>
+                    <input type="button" value="Submit" id="clickMe" onclick="callAPI();">
+                </form>
+                <label id="funk"><label>
+
+                <script>
+                    var bandName = document.getElementById("BandName").value
+
+                    function callAPI(){
+                        const url = "https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=" + bandName;
+                        fetch(url)
+                        .then(response => response.text())
+                        .then(contents => handleResponse(contents))
+                        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+                    }
+
+                    function handleResponse (response){
+                        if(response == "{}")
+                        {
+                            response = "not funk."
+                        }
+                        document.getElementById("funk").innerHTML = response;
+                    }
+                </script>
+                
+            </section>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+    <script src="https://kwes.io/js/kwes.js"></script>
+
+</body>
+
+</html>
