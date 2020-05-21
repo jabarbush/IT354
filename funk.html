@@ -81,7 +81,7 @@
             </nav>
             <section class="content-main">
                 <h2>Is This Band Funk?</h2> <br/><br/>
-                <p>3:25 update<p>
+                <p>3:30 update<p>
                 <form action="">
                     <input type="text" id="BandName" name="BandName"><br><br>
                     <input type="button" value="Submit" id="clickMe" onclick="callAPI(document.getElementById('BandName').value);">
@@ -96,13 +96,13 @@
                     .then(data => console.log(data))
                     .then(data => handleResponse(data));
                     }
-                    function handleResponse (response){
-                        //var obj = JSON.parse(response);
-                        if(response == "{}"){
+                    function handleResponse (data){
+                        var obj = JSON.parse(data);
+                        if(data == "{}"){
                             document.getElementById("funk").innerHTML = bandName + " is not funk. Sorry."
                         }
                         else{
-                            var desc = response.Desc;
+                            var desc = obj.Desc;
                             document.getElementById("funk").innerHTML = bandName + " is funk! " + desc;
                         }
                     }
