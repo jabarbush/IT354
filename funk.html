@@ -94,10 +94,10 @@
                     function callAPI(bandName){
                     fetch('https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=' + bandName)
                     .then(response => response.text())
-                    .then(data => handleResponse(data));
+                    .then(data => handleResponse(data, bandName));
                     }
 
-                    function handleResponse(data){
+                    function handleResponse(data, bandName){
                         var obj = JSON.parse(data);
                         if(data == "{}"){
                             document.getElementById("funk").innerHTML = bandName + " is not funk. Sorry."
@@ -105,6 +105,11 @@
                         else{
                             var desc = obj.Desc;
                             document.getElementById("funk").innerHTML = bandName + " is funk! " + desc;
+                            console.log(data);
+                            console.log(bandName);
+                            console.log(desc);
+                            console.log(obj);
+                            console.log(obj.Desc);
                         }
                     }
                 </script>
