@@ -81,20 +81,21 @@
             </nav>
             <section class="content-main">
                 <h2>Is This Band Funk?</h2> <br/><br/>
-                <p>3:10 update<p>
+                <p>3:20 update<p>
                 <form action="">
                     <input type="text" id="BandName" name="BandName"><br><br>
-                    <input type="button" value="Submit" id="clickMe" onclick="callAPI();">
+                    <input type="button" value="Submit" id="clickMe" onclick="callAPI(document.getElementById('BandName').value);">
                 </form>
                 <label id="funk"><label>
 
                 <script>
                     var bandName = document.getElementById("BandName").value;
+                    function callAPI(bandName){
                     fetch('https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=' + bandName)
                     .then(response => response.text())
                     .then(data => console.log(data))
                     .then(data => handleResponse(data));
-
+                    }
                     function handleResponse (response){
                         var obj = JSON.parse(response);
                         if(response == "{}"){
