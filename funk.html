@@ -94,8 +94,7 @@
                     function callAPI(bandName){
                     fetch('https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=' + bandName)
                     .then(response => response.text())
-                    .then(data => console.log(data))
-                    .then(data => handleResponse(data.text()));
+                    .then(data => handleResponse(data));
                     }
 
                     function handleResponse(data){
