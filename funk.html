@@ -81,7 +81,7 @@
             </nav>
             <section class="content-main">
                 <h2>Is This Band Funk?</h2> <br/><br/>
-
+                <p>3:10 update<p>
                 <form action="">
                     <input type="text" id="BandName" name="BandName"><br><br>
                     <input type="button" value="Submit" id="clickMe" onclick="callAPI();">
@@ -89,32 +89,23 @@
                 <label id="funk"><label>
 
                 <script>
-                    var bandName = document.getElementById("BandName").value
-
-                    /*function callAPI(){
-                        const url = "https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=vulfpeck";
-                        fetch(url, {
-                            mode: "no-cors"
-                        })
-                        .then(response => response.text())
-                        .then(contents => console.log(contents))
-                        .then(contents => handleResponse(contents))
-                        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-                    }*/
-
-                    fetch('https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=vulfpeck')
+                    var bandName = document.getElementById("BandName").value;
+                    fetch('https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=' + bandName)
                     .then(response => response.text())
-                    .then(data => console.log(data));
+                    .then(data => console.log(data))
+                    .then(data => handleResponse(data));
 
                     function handleResponse (response){
-                        if(response == "{}")
-                        {
-                            response = "not funk."
+                        var obj = JSON.parse(response);
+                        if(response == "{}"){
+                            document.getElementById("funk").innerHTML = bandName + " is not funk. Sorry."
                         }
-                        document.getElementById("funk").innerHTML = response;
+                        else{
+                            var desc = obj.Desc;
+                            document.getElementById("funk").innerHTML = bandName + " is funk! " + desc;
+                        }
                     }
                 </script>
-                
             </section>
         </div>
     </div>
