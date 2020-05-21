@@ -81,7 +81,7 @@
             </nav>
             <section class="content-main">
                 <h2>Is This Band Funk?</h2> <br/><br/>
-                <p>3:30 update<p>
+                <p>4:05 update<p>
                 <form action="">
                     <input type="text" id="BandName" name="BandName"><br><br>
                     <input type="button" value="Submit" id="clickMe" onclick="callAPI(document.getElementById('BandName').value);">
@@ -90,13 +90,15 @@
 
                 <script>
                     var bandName = document.getElementById("BandName").value;
+
                     function callAPI(bandName){
                     fetch('https://5jbosivemf.execute-api.us-east-1.amazonaws.com/test/funkbands?BandName=' + bandName)
                     .then(response => response.text())
                     .then(data => console.log(data))
-                    .then(data => handleResponse(data));
+                    .then(data => handleResponse(data.text()));
                     }
-                    function handleResponse (data){
+
+                    function handleResponse(data){
                         var obj = JSON.parse(data);
                         if(data == "{}"){
                             document.getElementById("funk").innerHTML = bandName + " is not funk. Sorry."
